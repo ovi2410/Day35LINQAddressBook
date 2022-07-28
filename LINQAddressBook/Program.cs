@@ -2,7 +2,7 @@
 //Console.WriteLine("Hello, World!");
 using System;
 
-namespace LINQ_AddressBook
+namespace LINQAddressBook
 {
     public class Program
     {
