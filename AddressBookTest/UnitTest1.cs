@@ -72,6 +72,16 @@ namespace AddressBookTest
             string actual = dataTableManger.RetrieveBasedOnCityorState("Lucknow", "UP");
             Assert.AreEqual(actual, expected);
         }
+        //Usecase 5: Retrieve count values from DataTable based on City or State
+        [TestMethod]
+        [TestCategory("Retrieve Row in Data Table based on City ")]
+        public void GivenRetrieveCountQuery_BasedOnCityandState_returnString()
+        {
+            string expected = "1 2";
+            string actual = dataTableManger.RetrieveCountBasedOnCityorState();
+            Assert.AreEqual(actual, expected);
+        }
+
     }
 }
 
