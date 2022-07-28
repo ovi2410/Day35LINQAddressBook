@@ -172,6 +172,20 @@ namespace LINQAddressBook
             }
             else return 0;
         }
+        //Delete a row from DataTable based on Name
+        public int DeleteRowInDataTable(string FirstName)
+        {
+            AddValues();
+            var modifiedList = (from ContactList in custTable.AsEnumerable() where ContactList.Field<string>("FirstName") == FirstName select ContactList).FirstOrDefault();
+            if (modifiedList != null)
+            {
+                modifiedList.Delete();
+                Console.WriteLine("--- After Deletion ---");
+                Display();
+                return 1;
+            }
+            else return 0;
+        }
         //Display all Values in DataRow
         public void Display()
         {
@@ -179,7 +193,9 @@ namespace LINQAddressBook
             {
                 Console.WriteLine("{0} \t {1} \t {2} \t {3} \t {4} \t {5} \t {6} \t {7}\n", dtRows["FirstName"], dtRows["LastName"], dtRows["Address"], dtRows["City"], dtRows["State"], dtRows["Zip"], dtRows["PhoneNumber"], dtRows["Email"]);
             }
-        }4
+        }
     }
 }
+
+    
 
