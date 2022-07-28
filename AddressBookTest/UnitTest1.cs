@@ -69,7 +69,7 @@ namespace AddressBookTest
         public void GivenRetrieveQuery_BasedOnCityorState_returnString()
         {
             string expected = "Raksha Parthiban";
-            string actual = dataTableManger.RetrieveBasedOnCityorState("Lucknow", "UP");
+            string actual = dataTableManger.RetrieveBasedOnCityorState("chennai", "TN");
             Assert.AreEqual(actual, expected);
         }
         //Usecase 5: Retrieve count values from DataTable based on City or State
@@ -81,7 +81,15 @@ namespace AddressBookTest
             string actual = dataTableManger.RetrieveCountBasedOnCityorState();
             Assert.AreEqual(actual, expected);
         }
+        //Usecase 6: Sort based on City
+        [TestMethod]
+        [TestCategory("Sort based on City")]
+        public void GivenSortQuery_BasedOnCityandState_returnString()
+        {
+            string expected = "Raksha Shalini ";
+            string actual = dataTableManger.SortBasedOnNameInDataTable("chennai");
+            Assert.AreEqual(actual, expected);
+        }
 
     }
 }
-
