@@ -21,3 +21,5 @@ namespace LINQAddressBook
         public string Type { get; set; }
     }
 }
+
+
